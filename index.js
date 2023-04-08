@@ -3,7 +3,9 @@ const fs = require('fs');
 const hbs = require('hbs');
 
 const app = express();
-const port = 3000;
+//const port = 3000;
+const port = process.env.PORT || 3000;
+
 
 const exchangeRates = {
   USD: { EUR: 0.84, GBP: 0.72, JPY: 109.25, CAD: 1.25 },
