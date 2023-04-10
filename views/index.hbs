@@ -4,10 +4,11 @@
     <link rel="stylesheet" type="text/css" href="/style.css">
   </head>
   <body>
+    <h1>Currency Converter</h1>
     <form method="POST">
       <label for="amount">Amount:</label>
-      <input type="number" name="amount" id="amount" placeholder="Enter amount">
-      <label for="fromCurrency">From:</label>
+      <input type="number" name="amount" id="amount" placeholder="Enter amount" min="1">
+      <label for="fromCurrency">Convert From:</label>
       <select name="fromCurrency" id="fromCurrency">
         <option value="USD">USD</option>
         <option value="EUR">EUR</option>
@@ -15,7 +16,7 @@
         <option value="JPY">JPY</option>
         <option value="CAD">CAD</option>
       </select>
-      <label for="toCurrency">To:</label>
+      <label for="toCurrency">Convert To:</label>
       <select name="toCurrency" id="toCurrency">
         <option value="USD">USD</option>
         <option value="EUR">EUR</option>
