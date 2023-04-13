@@ -6,6 +6,8 @@ const app = express();
 //const port = 3000;
 const port = process.env.PORT || 3000;
 
+let server;
+
 
 const exchangeRates = {
   USD: { EUR: 0.84, GBP: 0.72, JPY: 109.25, CAD: 1.25 },
@@ -38,8 +40,14 @@ app.post('/', (req, res) => {
   res.render('result.hbs', { amount, fromCurrency, toCurrency, convertedAmount });
 });
 
-app.listen(port, () => {
-  console.log(`Server listening on port ${port}`);
+beforeAll(async () => {
+  server = app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+  });
+});
+
+afterAll(done => {
+  server.close(done);
 });
 
 module.exports = { convertCurrency };
